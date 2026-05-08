@@ -210,3 +210,8 @@ Proyecto desarrollado con fines educativos.
 | Developer | Victor Recinos |
 | Developer | Henry Morales |
 | Developer | Lesli Zuniga |
+
+---
+
+## 📄 Documentacion
+https://docs.google.com/document/d/1B5iOiU0q3wJl9o4PoHQfeuDA_chhGQkRXI2o97HfqR4/edit?usp=sharing
