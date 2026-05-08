@@ -102,3 +102,39 @@ def eliminar():
         print("✅ Eliminado.")
     else:
         print("Cancelado.")
+
+def agregar_historial(codigo_cliente, entrada):
+    data = cargar()
+    cliente = _buscar_por_codigo(data, codigo_cliente)
+    if cliente:
+        cliente.setdefault("historial_transacciones", []).append(entrada)
+        guardar(data)
+
+def buscar():
+    data = cargar()
+    if not data:
+        print("\nNo hay clientes registrados.")
+        return
+
+    print("\n=== Buscar Cliente ===")
+    print("1. Por código")
+    print("2. Por empresa")
+    op = input("Opción: ").strip()
+
+    if op == "1":
+        codigo = non_empty("Código: ")
+        item = _buscar_por_codigo(data, codigo)
+        if not item:
+            print("⚠ No encontrado.")
+            return
+        imprimir_detalle(item) 
+    elif op == "2":
+        empresa = non_empty("Empresa (parte o completo): ").lower()
+        encontrados = [c for c in data if empresa in c["empresa"].lower()]
+        if not encontrados:
+            print("⚠ No se encontraron coincidencias.")
+            return
+        for c in encontrados:
+         imprimir_detalle(c) 
+    else:
+        print("⚠ Opción inválida.")
