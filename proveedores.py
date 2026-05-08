@@ -8,3 +8,6 @@ def cargar():
 
 def guardar(data):
     save_json(FILE, data)
+
+def _buscar_por_codigo(data, codigo):
+    return next((p for p in data if p["codigo"] == codigo), None)
