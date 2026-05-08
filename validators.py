@@ -21,3 +21,10 @@ def non_negative_float(msg):
         except:
             pass
         print("⚠ Ingrese un número válido.")
+
+def email(msg):
+    while True:
+        v = input(msg).strip()
+        if "@" in v and "." in v.split("@")[-1] and len(v) >= 6:
+            return v
+        print("⚠ Correo inválido.")
