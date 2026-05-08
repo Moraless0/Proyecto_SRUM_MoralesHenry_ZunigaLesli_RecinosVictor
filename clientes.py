@@ -138,3 +138,34 @@ def buscar():
          imprimir_detalle(c) 
     else:
         print("⚠ Opción inválida.")
+
+def ver_detalle():
+    data = cargar()
+    if not data:
+        print("\nNo hay clientes registrados.")
+        return
+    codigo = non_empty("Código del cliente: ")
+    item = _buscar_por_codigo(data, codigo)
+    if not item:
+        print("⚠ No encontrado.")
+        return
+    print("\n=== Detalle del Cliente ===")
+    _imprimir_detalle(item)
+
+def ver_historial():
+    data = cargar()
+    if not data:
+        print("\nNo hay clientes registrados.")
+        return
+    codigo = non_empty("Código del cliente: ")
+    item = _buscar_por_codigo(data, codigo)
+    if not item:
+        print("⚠ No encontrado.")
+        return
+    historial = item.get("historial_transacciones", [])
+    print(f"\n=== Historial de '{item['empresa']}' ===")
+    if not historial:
+        print("Sin transacciones registradas.")
+        return
+    for h in historial:
+        print(f"  > {h}")
