@@ -43,3 +43,12 @@ def registrar():
     data.append(item)
     guardar(data)
     print("✅ Registrado.")
+
+def listar():
+    data = cargar()
+    print("\n=== Proveedores ===")
+    if not data:
+        print("No hay registros.")
+        return
+    for p in data:
+        _imprimir_resumen(p)
