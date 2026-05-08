@@ -68,18 +68,28 @@ python main.py
 
 Sistema-Manufactura-IAQ/
 │── main.py
-│── materias_primas.py
-│── proveedores.py
-│── productos.py
 │── clientes.py
-│── produccion.py
-│── ventas.py
 │── inventario.py
-│── reportes.py
+│── materias_primas.py
 │── persistence.py
+│── produccion.py
+│── productos.py
+│── proveedores.py
+│── reportes.py
 │── validators.py
-│── *.json
+│── ventas.py
 │── README.md
+│
+├── data/
+│   ├── clientes.json
+│   ├── inventario.json
+│   ├── materias_primas.json
+│   ├── produccion.json
+│   ├── productos.json
+│   ├── proveedores.json
+│   ├── ventas.json
+│
+├── img/
 
 
 ## funcionalidades 
@@ -146,17 +156,17 @@ Inventario general
 
 ## 🖼️ Capturas de pantallas
 
-![Descripción de la imagen](ruta/a/la/imagen.png)
+![Programa funcionando correctamente](/img/image.png)
 
-![Otra captura](ruta/a/la/imagen2.png)
+![Funciones del programa](ruta/a/la/imagen2.png)
 
 
 ## Integrantes del equipo
 
 | Rol SCRUM | Nombre |
 |---|---|
-| Product Owner | |
-| Scrum Master | |
-| Developer | |
-| Developer | |
-| Developer | |
+| Product Owner |Henry Morales|
+| Scrum Master |Lesli Zuniga|
+| Developer |Victor Recinos|
+| Developer |Henry Morales |
+| Developer |Lesli Zuniga |
