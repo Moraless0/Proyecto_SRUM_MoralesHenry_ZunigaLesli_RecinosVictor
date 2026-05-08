@@ -169,3 +169,22 @@ def ver_historial():
         return
     for h in historial:
         print(f"  > {h}")
+
+def _imprimir_resumen(c):
+    historial = c.get("historial_transacciones", [])
+    print(f"\n  Código    : {c['codigo']}")
+    print(f"  Empresa   : {c['empresa']}")
+    print(f"  Contacto  : {c['contacto']}")
+    print(f"  Dirección : {c['direccion']}")
+    print(f"  Celular   : {c['tel_cel']}")
+    print(f"  Fijo      : {c['tel_fijo']}")
+    print(f"  Correo    : {c['correo']}")
+    print(f"  Historial : {len(historial)} transacción(es)")
+
+def _imprimir_detalle(c):
+    _imprimir_resumen(c)
+    historial = c.get("historial_transacciones", [])
+    if historial:
+        print("\n  Detalle de historial:")
+        for h in historial:
+            print(f"    > {h}")
