@@ -20,7 +20,7 @@ Su objetivo es optimizar el flujo operativo, garantizar trazabilidad y mantener 
 * [Uso](#-uso)
 * [Estructura del proyecto](#-estructura-del-proyecto)
 * [Funcionalidades](#-funcionalidades)
-* [Capturas de pantalla](#-capturas-de-pantallas)
+* [Capturas de pantalla](#-capturas-de-pantalla)
 * [Compatibilidad](#-compatibilidad)
 * [Roadmap](#-roadmap--mejoras-futuras)
 * [Contribuciones](#-contribuciones)
@@ -52,20 +52,28 @@ Antes de ejecutar el proyecto, asegúrate de tener instalado:
 
 ```bash
 # Clonar el repositorio
-git clone (URL_DEL_REPOSITORIO)
+git clone URL_DEL_REPOSITORIO
 
 # Entrar al directorio
 cd Sistema-Manufactura-IAQ
 
 # Ejecutar el sistema
 python main.py
+```
+
+---
 
 ## ▶️ Uso
 
+```bash
 python main.py
+```
+
+---
 
 ## 📁 Estructura del proyecto
 
+```plaintext
 Sistema-Manufactura-IAQ/
 │── main.py
 │── clientes.py
@@ -90,83 +98,115 @@ Sistema-Manufactura-IAQ/
 │   ├── ventas.json
 │
 ├── img/
+│   ├── image.png
+│   ├── funciones.png
+```
 
+---
 
-## funcionalidades 
+## ⚙️ Funcionalidades
 
-✔️ Materias Primas
-Registrar, listar, editar y eliminar materias primas
+### ✔️ Materias Primas
 
-Campos: código, nombre, descripción, proveedor, stock, precio/unidad, fechas
+- Registrar, listar, editar y eliminar materias primas
+- Campos: código, nombre, descripción, proveedor, stock, precio/unidad, fechas
+- Actualización automática del inventario
 
-Actualización automática del inventario
+### ✔️ Proveedores
 
-✔️ Proveedores
-CRUD completo
+- CRUD completo
+- Campos: empresa, contacto, dirección, teléfonos, correo, historial
 
-Campos: empresa, contacto, dirección, teléfonos, correo, historial
+### ✔️ Productos Finales
 
-✔️ Productos Finales
-CRUD completo
+- CRUD completo
+- Actualización automática del inventario
 
-Actualización automática del inventario
+### ✔️ Clientes
 
-✔️ Clientes
-CRUD completo
+- CRUD completo
+- Historial actualizado con cada orden de venta
 
-Historial actualizado con cada orden de venta
+### ✔️ Producción
 
-✔️ Producción
-Crear y listar órdenes
+- Crear y listar órdenes
+- Flujo: Pendiente → En Proceso → Completada / Cancelada
+- Descuento automático de materias primas
+- Validación de stock
 
-Flujo: Pendiente → En Proceso → Completada / Cancelada
+### ✔️ Ventas
 
-Descuento automático de materias primas
+- Crear y listar órdenes
+- Flujo: Pendiente → En Proceso → Enviado → Entregado / Cancelado
+- Descuento automático de productos
+- Validación de stock
 
-Validación de stock
+### ✔️ Inventario
 
-✔️ Ventas
-Crear y listar órdenes
+- Vista general de materias primas y productos
+- Actualización automática
 
-Flujo: Pendiente → En Proceso → Enviado → Entregado / Cancelado
+### ✔️ Reportes
 
-Descuento automático de productos
+- Materias primas en stock
+- Proveedores con historial
+- Órdenes de producción
+- Productos finales
+- Clientes con historial
+- Órdenes de venta
+- Inventario general
 
-Validación de stock
+---
 
-✔️ Inventario
-Vista general de materias primas y productos
+## 🖼️ Capturas de pantalla
 
-Actualización automática
+### Programa funcionando correctamente
 
-✔️ Reportes
-Materias primas en stock
+![Programa funcionando correctamente](./img/image.png)
 
-Proveedores con historial
+### Funciones del programa
 
-Órdenes de producción
+![Funciones del programa](./img/image1.png)
 
-Productos finales
+---
 
-Clientes con historial
+## 💻 Compatibilidad
 
-Órdenes de venta
+- Windows
+- macOS
+- Linux
 
-Inventario general
+---
 
-## 🖼️ Capturas de pantallas
+## 🚧 Roadmap / Mejoras futuras
 
-![Programa funcionando correctamente](/img/image.png)
+- Interfaz gráfica
+- Base de datos SQL
+- Sistema de usuarios y permisos
+- Exportación de reportes PDF y Excel
+- Dashboard estadístico
 
-![Funciones del programa](ruta/a/la/imagen2.png)
+---
 
+## 🤝 Contribuciones
 
-## Integrantes del equipo
+Las contribuciones son bienvenidas.  
+Puedes realizar un fork del proyecto y enviar tus mejoras mediante pull requests.
+
+---
+
+## 📄 Licencia
+
+Proyecto desarrollado con fines educativos.
+
+---
+
+## 👥 Integrantes del equipo
 
 | Rol SCRUM | Nombre |
 |---|---|
-| Product Owner |Henry Morales|
-| Scrum Master |Lesli Zuniga|
-| Developer |Victor Recinos|
-| Developer |Henry Morales |
-| Developer |Lesli Zuniga |
+| Product Owner | Henry Morales |
+| Scrum Master | Lesli Zuniga |
+| Developer | Victor Recinos |
+| Developer | Henry Morales |
+| Developer | Lesli Zuniga |
