@@ -83,3 +83,22 @@ def editar():
 
     guardar(data)
     print("✅ Actualizado.")
+
+def eliminar():
+    data = cargar()
+    codigo = non_empty("Código a eliminar: ")
+    item = _buscar_por_codigo(data, codigo)
+    if not item:
+        print("⚠ No encontrado.")
+        return
+
+    historial = item.get("historial_transacciones", [])
+    if historial:
+        print(f"⚠ Este cliente tiene {len(historial)} transacción(es) en historial.")
+    confirmar = input(f"¿Eliminar '{item['empresa']}'? (s/n): ").strip().lower()
+    if confirmar == "s":
+        data.remove(item)
+        guardar(data)
+        print("✅ Eliminado.")
+    else:
+        print("Cancelado.")
