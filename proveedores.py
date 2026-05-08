@@ -110,3 +110,45 @@ def agregar_historial(codigo_proveedor, entrada):
     if proveedor:
         proveedor.setdefault("historial_transacciones", []).append(entrada)
         guardar(data)
+
+def buscar():
+    data = cargar()
+    if not data:
+        print("\nNo hay proveedores registrados.")
+        return
+
+    print("\n=== Buscar Proveedor ===")
+    print("1. Por código")
+    print("2. Por empresa")
+    op = input("Opción: ").strip()
+
+    if op == "1":
+        codigo = non_empty("Código: ")
+        item = _buscar_por_codigo(data, codigo)
+        if not item:
+            print("⚠ No encontrado.")
+            return
+        _imprimir_detalle(item)
+    elif op == "2":
+        empresa = non_empty("Empresa (parte o completo): ").lower()
+        encontrados = [p for p in data if empresa in p["empresa"].lower()]
+        if not encontrados:
+            print("⚠ No se encontraron coincidencias.")
+            return
+        for p in encontrados:
+            _imprimir_detalle(p)
+    else:
+        print("⚠ Opción inválida.")
+
+def ver_detalle():
+    data = cargar()
+    if not data:
+        print("\nNo hay proveedores registrados.")
+        return
+    codigo = non_empty("Código del proveedor: ")
+    item = _buscar_por_codigo(data, codigo)
+    if not item:
+        print("⚠ No encontrado.")
+        return
+    print("\n=== Detalle del Proveedor ===")
+    _imprimir_detalle(item)
