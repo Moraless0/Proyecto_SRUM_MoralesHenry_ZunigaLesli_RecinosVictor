@@ -11,3 +11,13 @@ def positive_int(msg):
         if v.isdigit() and int(v) > 0:
             return int(v)
         print("⚠ Ingrese un entero positivo.")
+
+def non_negative_float(msg):
+    while True:
+        try:
+            v = float(input(msg).strip())
+            if v >= 0:
+                return v
+        except:
+            pass
+        print("⚠ Ingrese un número válido.")
