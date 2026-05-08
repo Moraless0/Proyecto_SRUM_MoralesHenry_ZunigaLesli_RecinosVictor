@@ -152,3 +152,40 @@ def ver_detalle():
         return
     print("\n=== Detalle del Proveedor ===")
     _imprimir_detalle(item)
+
+def ver_historial():
+    data = cargar()
+    if not data:
+        print("\nNo hay proveedores registrados.")
+        return
+    codigo = non_empty("Código del proveedor: ")
+    item = _buscar_por_codigo(data, codigo)
+    if not item:
+        print("⚠ No encontrado.")
+        return
+    historial = item.get("historial_transacciones", [])
+    print(f"\n=== Historial de '{item['empresa']}' ===")
+    if not historial:
+        print("Sin transacciones registradas.")
+        return
+    for h in historial:
+        print(f"  > {h}")
+
+def _imprimir_resumen(p):
+    historial = p.get("historial_transacciones", [])
+    print(f"\n  Código    : {p['codigo']}")
+    print(f"  Empresa   : {p['empresa']}")
+    print(f"  Contacto  : {p['contacto']}")
+    print(f"  Dirección : {p['direccion']}")
+    print(f"  Celular   : {p['tel_cel']}")
+    print(f"  Fijo      : {p['tel_fijo']}")
+    print(f"  Correo    : {p['correo']}")
+    print(f"  Historial : {len(historial)} transacción(es)")
+
+def _imprimir_detalle(p):
+    _imprimir_resumen(p)
+    historial = p.get("historial_transacciones", [])
+    if historial:
+        print("\n  Detalle de historial:")
+        for h in historial:
+            print(f"    > {h}")
