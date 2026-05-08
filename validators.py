@@ -28,3 +28,13 @@ def email(msg):
         if "@" in v and "." in v.split("@")[-1] and len(v) >= 6:
             return v
         print("⚠ Correo inválido.")
+
+def phone(msg):
+    while True:
+        v = input(msg).strip()
+        if v.isdigit() and len(v) >= 7:
+            return v
+        print("⚠ Ingrese solo números (mínimo 7 dígitos).")
+
+def unique_code(code, items, key):
+    return not any(i[key] == code for i in items)
