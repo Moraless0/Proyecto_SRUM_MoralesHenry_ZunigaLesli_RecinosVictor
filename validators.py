@@ -38,3 +38,16 @@ def phone(msg):
 
 def unique_code(code, items, key):
     return not any(i[key] == code for i in items)
+
+def date(msg, optional=False):
+    while True:
+        v = input(msg).strip()
+        if optional and v == "":
+            return None
+        partes = v.split("/")
+        if len(partes) == 3 and all(p.isdigit() for p in partes):
+            d, m, y = partes
+            if len(d) == 2 and len(m) == 2 and len(y) == 4:
+                if 1 <= int(d) <= 31 and 1 <= int(m) <= 12 and int(y) >= 2000:
+                    return v
+        print("⚠ Fecha inválida. Use dd/mm/aaaa (ej: 08/05/2026).")
