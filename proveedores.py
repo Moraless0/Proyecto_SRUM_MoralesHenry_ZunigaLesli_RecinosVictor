@@ -11,3 +11,34 @@ def guardar(data):
 
 def _buscar_por_codigo(data, codigo):
     return next((p for p in data if p["codigo"] == codigo), None)
+
+def editar():
+    data = cargar()
+    codigo = non_empty("Código a editar: ")
+    item = _buscar_por_codigo(data, codigo)
+    if not item:
+        print("⚠ No encontrado.")
+        return
+
+    print(f"\nEditando '{item['empresa']}' — Enter para mantener valor actual:")
+    v = input(f"  Empresa [{item['empresa']}]: ").strip()
+    if v:
+        item["empresa"] = v
+    v = input(f"  Contacto [{item['contacto']}]: ").strip()
+    if v:
+        item["contacto"] = v
+    v = input(f"  Dirección [{item['direccion']}]: ").strip()
+    if v:
+        item["direccion"] = v
+    v = input(f"  Celular [{item['tel_cel']}]: ").strip()
+    if v:
+        item["tel_cel"] = v
+    v = input(f"  Fijo [{item['tel_fijo']}]: ").strip()
+    if v:
+        item["tel_fijo"] = v
+    v = input(f"  Correo [{item['correo']}]: ").strip()
+    if v:
+        item["correo"] = v
+
+    guardar(data)
+    print("✅ Actualizado.")
